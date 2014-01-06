@@ -3,7 +3,6 @@
     "description": "Main my ZF2 mdule",
     "type": "zf-module",
     "license": "MIT",
-    "version":"0.1.0",
     "keywords": [
         "zf2", 
         "module", 
