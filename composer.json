@@ -9,12 +9,12 @@
         "module", 
         "main"
     ],
-    "homepage": "https://github.com/GianArb/GaToDo",
+    "homepage": "https://github.com/simogrima/MainModule",
     "author":
         {
             "name": "Simone Grimani",
             "email": "simogrima@gmail.com",
-            "homepage": ""
+            "homepage": "https://www.simogrima.com"
         },
     "require": {
         "php": ">=5.3.3",
