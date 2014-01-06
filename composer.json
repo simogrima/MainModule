@@ -1,0 +1,31 @@
+{
+    "name": "simogrima/main-module",
+    "description": "Main my ZF2 mdule",
+    "type": "zf-module",
+    "license": "MIT",
+    "version":"0.1.0",
+    "keywords": [
+        "zf2", 
+        "module", 
+        "main"
+    ],
+    "homepage": "https://github.com/GianArb/GaToDo",
+    "author":
+        {
+            "name": "Simone Grimani",
+            "email": "simogrima@gmail.com",
+            "homepage": ""
+        },
+    "require": {
+        "php": ">=5.3.3",
+        "zendframework/zendframework": "2.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "MainModule": "src/"
+        },
+        "classmap": [
+            "./Module.php"
+        ]
+    }
+}
