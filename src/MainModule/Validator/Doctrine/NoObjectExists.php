@@ -1,10 +1,10 @@
 <?php
 
-
 namespace MainModule\Validator\Doctrine;
 use DoctrineModule\Validator\NoObjectExists as DoctrineNoObjectExists;
 /**
- * Class that validates if objects does not exist in a given repository with a given list of matched fields
+ * Class that validates if objects does not exist. 
+ * Add exclude param form update mode.
  *
  * @license MIT
  * @link    http://www.simogrima.com/
@@ -45,36 +45,26 @@ class NoObjectExists extends DoctrineNoObjectExists
      */
     public function isValid($value)
     {
-        var_dump($this->getExclude());
         $value = $this->cleanSearchValue($value);
-        var_dump($value);
-        echo key($value) . ' => ' . $value[key($value)] . '<br/>';
         $qb = $this->objectRepository->createQueryBuilder('a');
         $field = key($value);
             $qb->where($qb->expr()->eq('a.'.  $field, ":{$field}"));
             $qb->setParameter($field, $value[$field]);
-        
         
         $exclude = $this->getExclude();
         if (isset($exclude)) {
             $qb->andWhere($qb->expr()->not($qb->expr()->eq('a.'.$exclude['field'], ":{$exclude['field']}")));
             $qb->setParameter($exclude['field'], $exclude['value']);
         }
-        echo $qb;
         
         $match = $qb->getQuery()
-            ->getResult();
+            ->getOneOrNullResult();
         
-        //$match = $this->objectRepository->findOneBy($value);
-        
-        
-
         if (is_object($match)) {
             $this->error(self::ERROR_OBJECT_FOUND, $value);
 
             return false;
         }
-
         return true;
     }
 }
