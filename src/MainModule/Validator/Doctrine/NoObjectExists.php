@@ -2,7 +2,7 @@
 
 
 namespace MainModule\Validator\Doctrine;
-use DoctrineModule\Validator;
+use Doctrine\Module\Validator;
 /**
  * Class that validates if objects does not exist in a given repository with a given list of matched fields
  *
