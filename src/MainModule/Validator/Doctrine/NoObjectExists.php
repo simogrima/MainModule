@@ -2,7 +2,7 @@
 
 
 namespace MainModule\Validator\Doctrine;
-use Doctrine\Module\Validator;
+use DoctrineModule\Validator\NoObjectExists as DoctrineNoObjectExists;
 /**
  * Class that validates if objects does not exist in a given repository with a given list of matched fields
  *
@@ -10,7 +10,7 @@ use Doctrine\Module\Validator;
  * @link    http://www.simogrima.com/
  * @author  Grimani Simone <simogrima@gmail.com>
  */
-class NoObjectExists extends Validator
+class NoObjectExists extends DoctrineNoObjectExists
 {
     
         /**
