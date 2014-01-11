@@ -1,6 +1,6 @@
 <?php
 
-namespace MyZfcRbac\Mapper\Exception;
+namespace MainModule\Mapper\Db\Exception;
 
 class InvalidArgumentException extends \InvalidArgumentException
 {}
