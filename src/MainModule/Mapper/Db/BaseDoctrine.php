@@ -28,7 +28,6 @@ class BaseDoctrine
     public function __construct(EntityManager $em)
     {
         $this->em      = $em;
-        $this->options = $options;
     }
 
     public function insert($entity)
